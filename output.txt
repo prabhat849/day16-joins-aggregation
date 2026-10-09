@@ -1,0 +1,150 @@
+[info] entering thin client - BEEP WHIRR
+[info] starting sbt server in the background
+[info] use 'sbt shutdown' to shutdown the server
+[info]  
+[info] welcome to sbt 2.0.8 (Ubuntu Java 17.0.20)
+[info] loading project definition from /home/prabhat/day16-joins-aggregation/project
+[info] set current project to Day16-Joins-Aggregation (in build file:/home/prabhat/day16-joins-aggregation/)
+[info] compiling 1 Scala source to /home/prabhat/day16-joins-aggregation/target/out/jvm/scala-2.12.18/day16-joins-aggregation/classes ...
+[info] done compiling
+[info] running (fork) Day16JoinsAggregation 
+Picked up JAVA_TOOL_OPTIONS: --add-opens=java.base/sun.nio.ch=ALL-UNNAMED
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/10/09 05:13:23 WARN Utils: Your hostname, LAPTOP-EGSE3CEJ resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+26/10/09 05:13:23 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+26/10/09 05:13:23 INFO SparkContext: Running Spark version 3.5.9
+26/10/09 05:13:23 INFO SparkContext: OS info Linux, 6.18.33.2-microsoft-standard-WSL2, amd64
+26/10/09 05:13:23 INFO SparkContext: Java version 17.0.20
+26/10/09 05:13:24 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/09 05:13:24 INFO ResourceUtils: ==============================================================
+26/10/09 05:13:24 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/09 05:13:24 INFO ResourceUtils: ==============================================================
+26/10/09 05:13:24 INFO SparkContext: Submitted application: Day16-Joins-Aggregation
+26/10/09 05:13:24 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/09 05:13:24 INFO ResourceProfile: Limiting resource is cpu
+26/10/09 05:13:24 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/09 05:13:24 INFO SecurityManager: Changing view acls to: prabhat
+26/10/09 05:13:24 INFO SecurityManager: Changing modify acls to: prabhat
+26/10/09 05:13:24 INFO SecurityManager: Changing view acls groups to: 
+26/10/09 05:13:24 INFO SecurityManager: Changing modify acls groups to: 
+26/10/09 05:13:24 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: prabhat; groups with view permissions: EMPTY; users with modify permissions: prabhat; groups with modify permissions: EMPTY
+26/10/09 05:13:24 INFO Utils: Successfully started service 'sparkDriver' on port 45997.
+26/10/09 05:13:24 INFO SparkEnv: Registering MapOutputTracker
+26/10/09 05:13:24 INFO SparkEnv: Registering BlockManagerMaster
+26/10/09 05:13:24 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/09 05:13:24 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/09 05:13:24 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/09 05:13:24 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-8ae523f1-f20f-4ce6-b5e7-254c8a2425a0
+26/10/09 05:13:25 INFO MemoryStore: MemoryStore started with capacity 988.8 MiB
+26/10/09 05:13:25 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/09 05:13:25 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/09 05:13:25 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/09 05:13:25 INFO Executor: Starting executor ID driver on host 10.255.255.254
+26/10/09 05:13:25 INFO Executor: OS info Linux, 6.18.33.2-microsoft-standard-WSL2, amd64
+26/10/09 05:13:25 INFO Executor: Java version 17.0.20
+26/10/09 05:13:25 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/10/09 05:13:25 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@56637cff for default.
+26/10/09 05:13:25 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38061.
+26/10/09 05:13:25 INFO NettyBlockTransferService: Server created on 10.255.255.254:38061
+26/10/09 05:13:25 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/09 05:13:25 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.255.255.254, 38061, None)
+26/10/09 05:13:25 INFO BlockManagerMasterEndpoint: Registering block manager 10.255.255.254:38061 with 988.8 MiB RAM, BlockManagerId(driver, 10.255.255.254, 38061, None)
+26/10/09 05:13:25 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.255.255.254, 38061, None)
+26/10/09 05:13:25 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.255.255.254, 38061, None)
+========================================
+DAY 16 - SPARK JOINS AND AGGREGATION
+========================================
+
+===== EMPLOYEE DATA: 15 RECORDS =====
++-----------+-------------+--------+-------+
+|employee_id|employee_name|salary  |dept_id|
++-----------+-------------+--------+-------+
+|1          |Prabhat      |25000.0 |D01    |
+|2          |Rahul        |45000.0 |D02    |
+|3          |Amit         |75000.0 |D01    |
+|4          |Sneha        |120000.0|D03    |
+|5          |Priya        |60000.0 |D02    |
+|6          |Arjun        |28000.0 |D04    |
+|7          |Neha         |55000.0 |D02    |
+|8          |Karan        |95000.0 |D01    |
+|9          |Anjali       |35000.0 |D03    |
+|10         |Rohit        |85000.0 |D01    |
+|11         |Pooja        |150000.0|D04    |
+|12         |Vikram       |18000.0 |D05    |
+|13         |Manish       |72000.0 |D02    |
+|14         |Kavita       |68000.0 |D05    |
+|15         |Suresh       |50000.0 |D03    |
++-----------+-------------+--------+-------+
+
+
+===== DEPARTMENT DATA: 5 RECORDS =====
++-------+----------------+
+|dept_id|dept_name       |
++-------+----------------+
+|D01    |Engineering     |
+|D02    |Data Engineering|
+|D03    |Human Resources |
+|D04    |Finance         |
+|D05    |Marketing       |
++-------+----------------+
+
+
+===== INNER JOIN: EMPLOYEES AND DEPARTMENTS =====
++-----------+-------------+--------+----------------+
+|employee_id|employee_name|salary  |dept_name       |
++-----------+-------------+--------+----------------+
+|1          |Prabhat      |25000.0 |Engineering     |
+|2          |Rahul        |45000.0 |Data Engineering|
+|3          |Amit         |75000.0 |Engineering     |
+|4          |Sneha        |120000.0|Human Resources |
+|5          |Priya        |60000.0 |Data Engineering|
+|6          |Arjun        |28000.0 |Finance         |
+|7          |Neha         |55000.0 |Data Engineering|
+|8          |Karan        |95000.0 |Engineering     |
+|9          |Anjali       |35000.0 |Human Resources |
+|10         |Rohit        |85000.0 |Engineering     |
+|11         |Pooja        |150000.0|Finance         |
+|12         |Vikram       |18000.0 |Marketing       |
+|13         |Manish       |72000.0 |Data Engineering|
+|14         |Kavita       |68000.0 |Marketing       |
+|15         |Suresh       |50000.0 |Human Resources |
++-----------+-------------+--------+----------------+
+
+
+===== DEPARTMENT-WISE AGGREGATION =====
++----------------+--------------+--------------+------------+--------------+--------------+
+|dept_name       |employee_count|average_salary|total_salary|maximum_salary|minimum_salary|
++----------------+--------------+--------------+------------+--------------+--------------+
+|Data Engineering|4             |58000.0       |232000.0    |72000.0       |45000.0       |
+|Engineering     |4             |70000.0       |280000.0    |95000.0       |25000.0       |
+|Finance         |2             |89000.0       |178000.0    |150000.0      |28000.0       |
+|Human Resources |3             |68333.33      |205000.0    |120000.0      |35000.0       |
+|Marketing       |2             |43000.0       |86000.0     |68000.0       |18000.0       |
++----------------+--------------+--------------+------------+--------------+--------------+
+
+
+===== DEPARTMENTS WITH AVERAGE SALARY >= 50000 =====
++----------------+--------------+--------------+------------+--------------+--------------+
+|dept_name       |employee_count|average_salary|total_salary|maximum_salary|minimum_salary|
++----------------+--------------+--------------+------------+--------------+--------------+
+|Data Engineering|4             |58000.0       |232000.0    |72000.0       |45000.0       |
+|Engineering     |4             |70000.0       |280000.0    |95000.0       |25000.0       |
+|Finance         |2             |89000.0       |178000.0    |150000.0      |28000.0       |
+|Human Resources |3             |68333.33      |205000.0    |120000.0      |35000.0       |
++----------------+--------------+--------------+------------+--------------+--------------+
+
+
+===== LEFT JOIN RESULT COUNT =====
+Employee records before join: 15
+Employee records after left join: 15
+
+===== DAY 16 CONCEPTS =====
+Inner Join: Returns matching rows from both datasets.
+Left Join: Keeps every row from the left dataset.
+groupBy: Groups rows using one or more columns.
+agg: Calculates count, average, sum, max and min.
+filter: Selects rows matching a condition.
+
+DAY 16 COMPLETED SUCCESSFULLY
+[success] elapsed time: 29 s
+[0J
